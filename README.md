@@ -1,16 +1,17 @@
 docker-hyperledger-fabric
-=========
+====
 docker-hyperledger-fabric-v1.2
 Fabric v1.2.0	latest stable fabric 1.2.0 release.
 
-Getting Started
--------------
+#Getting Started
+
 
 ###Quick Test
 The following command will run the entire process (start a fabric network, create channel, test chaincode and stop it.
-
+---bash
 $ make setup download # Install docker/compose, and pull required images
 $ make test  # Test with default fabric solo mode
+---
 
 ##Test with more modes
 
