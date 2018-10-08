@@ -29,7 +29,7 @@ $ HLF_MODE=be make test  # Start a blockchain-explorer to view network info
 $ make stop
 $ make clean 
 $ make startFabric
-```sh
+```
 
 # More Details
 more details can be seen in your makefile
@@ -37,57 +37,62 @@ more details can be seen in your makefile
 # Environment Setup
 
 The following scripts will setup the environment by installing Docker, Docker-Compose and download required docker images.
-
+```sh
 $ make setup # setup environment
-
+```
 # Generate crypto-config and channel-artifacts
-
+```sh
 $ make gen_config
+```
 The cmd actually calls scripts/gen_config.sh to generate the crypto-config and channel-artifacts.
 
 # Bootup Fabric Network
 
 Start a 4 peer (belonging to 2 organizations) fabric network.
-
+```sh
 $ make start  # Start a fabric network
+```
 The script actually uses docker-compose to boot up the fabric network with several containers.
 
 There will be 7 running containers, include 4 peers, 1 cli, 1 ca and 1 orderer.
 
 # Create Application Channel
-
+```sh
 $ make test_channel_create 
+```
 The command actually calls the scripts/test_channel_create.sh script in the fabric-cli container, to create a new application channel with default name of businesschannel.
 
 # Join Peers into Application Channel
-
+```sh
 $ make test_channel_join 
+```
 The command actually calls the scripts/test_channel_join.sh script in the fabric-cli container, to join all peers into the channel.
 
 # Intall Chaincode to All Peers
 
-```bash
+```sh
 $ make test_cc_install
-The command actually calls the scripts/test_cc_install.sh script in the fabric-cli container, to install chaincode example02 for testing.
 ```
+The command actually calls the scripts/test_cc_install.sh script in the fabric-cli container, to install chaincode example02 for testing.
 
 # Instantiate Chaincode in the Application Channel
-
+```sh
 $ make test_cc_instantiate
+```
 The command actually calls the scripts/test_cc_instantiate.sh script in the fabric-cli container, to instantiate chaincode example02.
 
 And there will be new chaincode container generated in the system
 
 # Test Chaincode
 
-```bash
+```sh
 $ make test_cc_invoke_query
 ```
 The command actually calls the scripts/test_cc_invoke_query.sh script in the fabric-cli container, to test chaincode example02 with invoke and query.
 
 # Test System Chaincode
 
-```bash
+```sh
 $ make test_lscc # test LSCC
 $ make test_qscc # test QSCC
 ```
@@ -96,13 +101,13 @@ The command actually calls the scripts/test_lscc.sh and scripts/test_qscc.sh scr
 
 # Test Fetch Blocks
 
-```
+```sh
 $ make test_fetch_blocks # test fetch blocks
 The command actually calls the scripts/test_fetch_blocks.sh script in the fabric-cli container, to test fetching blocks from channels.
 ```
 
 # Test Configtxlator
-```
+```sh
 $ make test_configtxlator
 ```
 The command actually calls the scripts/test_configtxlator.sh script in the fabric-cli container, to test configtxlator to change the channel configuration.
@@ -110,12 +115,13 @@ The command actually calls the scripts/test_configtxlator.sh script in the fabri
 More details can be found at Configtxlator.
 
 # Stop the network
-```
+```sh
 $ make stop # stop the fabric network
 ```
 Clean environment
 
 # Clean all related containers and images.
-
+```sh
 $ make clean # clean the environment
+```
 
