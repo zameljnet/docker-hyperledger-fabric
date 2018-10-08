@@ -23,7 +23,7 @@ $ HLF_MODE=kafka make test # Bootup a fabric network with kafka mode
 $ HLF_MODE=be make test  # Start a blockchain-explorer to view network info
 ```
 
-# To Start a Fabric network
+# To Start a Fabric network For DApp
 
 ```sh
 $ make stop
@@ -103,8 +103,8 @@ The command actually calls the scripts/test_lscc.sh and scripts/test_qscc.sh scr
 
 ```sh
 $ make test_fetch_blocks # test fetch blocks
-The command actually calls the scripts/test_fetch_blocks.sh script in the fabric-cli container, to test fetching blocks from channels.
 ```
+The command actually calls the scripts/test_fetch_blocks.sh script in the fabric-cli container, to test fetching blocks from channels.
 
 # Test Configtxlator
 ```sh
