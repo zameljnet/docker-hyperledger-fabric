@@ -8,23 +8,28 @@ Getting Started
 # Quick Test
 The following command will run the entire process (start a fabric network, create channel, test chaincode and stop it.
 
+```sh
 $ make setup download # Install docker/compose, and pull required images
 $ make test  # Test with default fabric solo mode
-
+```
 
 # Test with more modess
 
+```sh
 $ HLF_MODE=solo make test # Bootup a fabric network with solo mode
 $ HLF_MODE=couchdb make test # Enable couchdb support, web UI is at `http://localhost:5984/_utils`
 $ HLF_MODE=event make test  # Enable eventhub listener
 $ HLF_MODE=kafka make test # Bootup a fabric network with kafka mode
 $ HLF_MODE=be make test  # Start a blockchain-explorer to view network info
+```
 
 # To Start a Fabric network
 
+```sh
 $ make stop
 $ make clean 
 $ make startFabric
+```sh
 
 # More Details
 more details can be seen in your makefile
@@ -61,8 +66,10 @@ The command actually calls the scripts/test_channel_join.sh script in the fabric
 
 # Intall Chaincode to All Peers
 
+```bash
 $ make test_cc_install
 The command actually calls the scripts/test_cc_install.sh script in the fabric-cli container, to install chaincode example02 for testing.
+```
 
 # Instantiate Chaincode in the Application Channel
 
@@ -73,30 +80,39 @@ And there will be new chaincode container generated in the system
 
 # Test Chaincode
 
+```bash
 $ make test_cc_invoke_query
+```
 The command actually calls the scripts/test_cc_invoke_query.sh script in the fabric-cli container, to test chaincode example02 with invoke and query.
 
 # Test System Chaincode
- 
+
+```bash
 $ make test_lscc # test LSCC
 $ make test_qscc # test QSCC
+```
+
 The command actually calls the scripts/test_lscc.sh and scripts/test_qscc.sh script in the fabric-cli container, to test LSCC and QSCC.
 
 # Test Fetch Blocks
 
+```
 $ make test_fetch_blocks # test fetch blocks
 The command actually calls the scripts/test_fetch_blocks.sh script in the fabric-cli container, to test fetching blocks from channels.
+```
 
 # Test Configtxlator
-
+```
 $ make test_configtxlator
+```
 The command actually calls the scripts/test_configtxlator.sh script in the fabric-cli container, to test configtxlator to change the channel configuration.
 
 More details can be found at Configtxlator.
 
 # Stop the network
-
+```
 $ make stop # stop the fabric network
+```
 Clean environment
 
 # Clean all related containers and images.
